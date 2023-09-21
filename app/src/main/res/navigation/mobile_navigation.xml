@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_mapas">
+
+    <fragment
+        android:id="@+id/nav_mapas"
+        android:name="com.patriciasoft.examen.ui.mapas.HomeFragment"
+        android:label="Mapas"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_lugaresTuristicos"
+        android:name="com.patriciasoft.examen.ui.lugaresTuristicos.GalleryFragment"
+        android:label="Lugares Turísticos"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_lugaresTuristicos_to_detalleLugares"
+            app:destination="@id/detalleLugares" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.patriciasoft.examen.ui.salir.SlideshowFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_detalleLugares"
+        android:name="com.patriciasoft.examen.ui.lugaresTuristicos.DetalleLugares"
+        android:label="fragment_detalle_lugares"
+        tools:layout="@layout/fragment_detalle_lugares" >
+        <action
+            android:id="@+id/action_detalleLugares_to_nav_lugaresTuristicos"
+            app:destination="@id/nav_lugaresTuristicos" />
+    </fragment>
+</navigation>
